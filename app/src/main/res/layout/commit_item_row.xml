@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:weightSum="1">
+
+  <ImageView
+    android:id="@+id/person_image"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/loading"
+    android:background="@drawable/rounded_borders"/>
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/person_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Person name"
+      android:textColor="@color/colorPrimary"
+      android:textSize="20dp"/>
+
+    <TextView
+      android:id="@+id/commit_sha"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Commit Sha"
+      android:textColor="@color/black"
+      android:textSize="15dp"/>
+
+    <TextView
+      android:id="@+id/commit_message"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="@color/black"
+      android:text="Commit Message"
+      android:textSize="15dp"/>
+  </LinearLayout>
+</LinearLayout>
