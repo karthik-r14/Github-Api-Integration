@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 urlConnection.setRequestProperty("Accept", "application/vnd.github.cloak-preview");
 
                 //if you uncomment the following line GitHub API will not respond
-//                urlConnection.setDoOutput(true);
+                // urlConnection.setDoOutput(true);
                 urlConnection.setDoInput(true);
                 urlConnection.connect();
                 //check for HTTP response
