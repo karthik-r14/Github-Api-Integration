@@ -48,17 +48,17 @@ public class CommitInfoActivity extends AppCompatActivity {
     }
 
     class Mytask extends AsyncTask<String, Void, Void> {
-        private ProgressDialog pDialog;
+        private ProgressDialog progressDialog;
         boolean apiLimitExceeded = false;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(CommitInfoActivity.this);
-            pDialog.setMessage("Getting Data ...");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
-            pDialog.show();
+            progressDialog = new ProgressDialog(CommitInfoActivity.this);
+            progressDialog.setMessage("Getting Data ...");
+            progressDialog.setIndeterminate(false);
+            progressDialog.setCancelable(false);
+            progressDialog.show();
         }
 
         @Override
@@ -149,7 +149,7 @@ public class CommitInfoActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            pDialog.dismiss();
+            progressDialog.dismiss();
             CustomAdapter adapter = new CustomAdapter(getApplicationContext(), persons);
             commitList.setAdapter(adapter);
         }
