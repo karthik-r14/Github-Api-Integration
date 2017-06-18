@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.thoughworks.githubapiintegration.R;
 import com.thoughworks.githubapiintegration.model.Person;
 
@@ -38,7 +39,11 @@ public class CustomAdapter extends ArrayAdapter {
         commitMessage.setText(persons.get(position).getCommitMessage());
         commitSha.setText(persons.get(position).getCommitSha());
 
-        new DownloadImageTask(imageView).execute(persons.get(position).getImageUrl());
+        Picasso.with(getContext())
+                .load(persons.get(position).getImageUrl())
+                .placeholder(R.drawable.loading)
+                .transform(new CircleTransformation())
+                .into(imageView);
 
         return row;
     }
