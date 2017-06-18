@@ -1,6 +1,6 @@
-package com.thoughworks.githubapiintegration;
+package com.thoughworks.githubapiintegration.model;
 
-class Person {
+public class Person {
     private String name;
     private String commitMessage;
     private String commitSha;

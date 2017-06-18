@@ -1,10 +1,13 @@
-package com.thoughworks.githubapiintegration;
+package com.thoughworks.githubapiintegration.view.commitInfo;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
+import com.thoughworks.githubapiintegration.model.Person;
+import com.thoughworks.githubapiintegration.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,19 +26,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class CommitInfoActivity extends AppCompatActivity {
+
+    @BindView(R.id.commit_list)
+    ListView commitList;
 
     String total_count, incomplete_results;
     JSONArray items;
-    ListView commitList;
     ArrayList<Person> persons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_commit_info);
+        ButterKnife.bind(this);
         persons = new ArrayList<>();
-        commitList = (ListView) findViewById(R.id.commit_list);
         new Mytask().execute("rails/rails+all");
     }
 
@@ -46,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(MainActivity.this);
+            pDialog = new ProgressDialog(CommitInfoActivity.this);
             pDialog.setMessage("Getting Data ...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);

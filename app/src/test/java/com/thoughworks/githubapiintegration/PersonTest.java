@@ -1,5 +1,7 @@
 package com.thoughworks.githubapiintegration;
 
+import com.thoughworks.githubapiintegration.model.Person;
+
 import org.junit.Before;
 import org.junit.Test;
 

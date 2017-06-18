@@ -1,4 +1,4 @@
-package com.thoughworks.githubapiintegration;
+package com.thoughworks.githubapiintegration.view.commitInfo;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,8 +8,8 @@ import android.widget.ImageView;
 
 import java.io.InputStream;
 
-class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-    ImageView imageView;
+public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+    private ImageView imageView;
 
     public DownloadImageTask(ImageView imageView) {
         this.imageView = imageView;

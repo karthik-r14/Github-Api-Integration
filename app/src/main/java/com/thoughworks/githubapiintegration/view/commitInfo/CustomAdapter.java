@@ -1,4 +1,4 @@
-package com.thoughworks.githubapiintegration;
+package com.thoughworks.githubapiintegration.view.commitInfo;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,10 +10,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.thoughworks.githubapiintegration.R;
+import com.thoughworks.githubapiintegration.model.Person;
+
 import java.util.ArrayList;
 
-class CustomAdapter extends ArrayAdapter {
-    ArrayList<Person> persons;
+public class CustomAdapter extends ArrayAdapter {
+    private ArrayList<Person> persons;
 
     public CustomAdapter(Context context, ArrayList<Person> persons) {
         super(context, R.layout.commit_item_row, R.id.person_image, persons);
